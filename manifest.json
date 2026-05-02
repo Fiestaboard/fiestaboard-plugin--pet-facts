@@ -1,0 +1,73 @@
+{
+  "id": "pet_facts",
+  "name": "Pet Facts",
+  "version": "0.1.0",
+  "description": "Display a random fun fact about cats or dogs.",
+  "author": "FiestaBoard Team",
+  "icon": "paw-print",
+  "category": "entertainment",
+  "repository": "https://github.com/Fiestaboard/fiestaboard-plugin--pet-facts",
+  "documentation": "README.md",
+  "min_refresh_seconds": 300,
+  "settings_schema": {
+    "type": "object",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "title": "Enabled",
+        "default": false
+      },
+      "animal": {
+        "type": "string",
+        "title": "Animal",
+        "description": "Which animal facts to show.",
+        "enum": [
+          "cat",
+          "dog",
+          "random"
+        ],
+        "default": "random"
+      },
+      "refresh_seconds": {
+        "type": "integer",
+        "title": "Refresh Interval (seconds)",
+        "description": "How often to fetch a new fact.",
+        "default": 300,
+        "minimum": 60
+      }
+    },
+    "required": []
+  },
+  "variables": {
+    "groups": {
+      "fact": {
+        "label": "Pet Fact"
+      }
+    },
+    "simple": {
+      "fact": {
+        "description": "The pet fact",
+        "type": "string",
+        "max_length": 22,
+        "group": "fact",
+        "example": "Cats sleep 12-16 hours"
+      },
+      "animal": {
+        "description": "The animal type (cat or dog)",
+        "type": "string",
+        "max_length": 3,
+        "group": "fact",
+        "example": "cat"
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "src": "docs/board-display.png",
+      "alt": "Pet Facts displayed on a Vestaboard",
+      "caption": "Example board output using the default template",
+      "primary": true
+    }
+  ],
+  "api_docs": "https://catfact.ninja/"
+}
