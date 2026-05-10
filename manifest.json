@@ -1,7 +1,7 @@
 {
   "id": "pet_facts",
   "name": "Pet Facts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Display a random fun fact about cats or dogs.",
   "author": "FiestaBoard Team",
   "icon": "paw-print",
@@ -69,5 +69,48 @@
       "primary": true
     }
   ],
-  "api_docs": "https://catfact.ninja/"
+  "api_docs": "https://catfact.ninja/",
+  "demo": {
+    "name": "Pet Facts Demo",
+    "device_type": "flagship",
+    "config": {
+      "enabled": true,
+      "animal": "random",
+      "refresh_seconds": 300
+    },
+    "template": [
+      "Pet Facts",
+      "",
+      "{{pet_facts.animal}} fact:",
+      "{{pet_facts.fact}}",
+      "",
+      ""
+    ],
+    "line_metadata": [
+      {
+        "alignment": "center",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      }
+    ]
+  }
 }
